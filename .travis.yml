@@ -2,5 +2,8 @@ language: android
 sudo: required
 jdk: oraclejdk8
 
+before_script:
+ - yes | sdkmanager --licenses
+
 script:
  - ./gradlew dependencies
