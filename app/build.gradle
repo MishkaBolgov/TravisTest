@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    println "Some action 1"
     compileSdkVersion 28
     defaultConfig {
         applicationId "ru.appvelox.travistestproject"
@@ -35,6 +36,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-task mytask(){
-    println "action in task"
+task mytask << {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    def one = properties.getProperty("one")
+    def two = properties.getProperty("two")
+
+    println "action in task $one, $two"
 }
