@@ -41,5 +41,8 @@ task mytask << {
     def one = properties.getProperty("bintray.user")
     def two = properties.getProperty("bintray.apikey")
 
+    println "test vars: ${one == "mikhailbolgov"}"
+    println "test vars: ${one == "mikhailbolgo"}"
+
     println "action in task $one, $two"
 }
