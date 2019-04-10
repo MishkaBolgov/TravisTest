@@ -38,8 +38,8 @@ task mytask << {
     Properties properties = new Properties()
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
-    def one = properties.getProperty("bintray.user")
-    def two = properties.getProperty("bintray.apikey")
+    def one = properties.getProperty("user")
+    def two = properties.getProperty("apikey")
 
     println "test vars: ${one == "mikhailbolgov"}"
     println "test vars: ${one == "mikhailbolgo"}"

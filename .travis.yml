@@ -5,5 +5,5 @@ android:
     - android-28
 
 script:
-    - printf "bintray.user=$bintray.user\nbintray.apikey=$bintray.apikey" > local.properties
+    - printf "user=$user\napikey=$apikey" > local.properties
     - ./gradlew mytask
