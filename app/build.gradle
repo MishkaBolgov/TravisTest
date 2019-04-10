@@ -4,6 +4,37 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'maven'
+apply plugin: 'signing'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+
+ext {
+    bintrayRepo = "Permissionist"
+    bintrayName = "ru.appvelox.permissionist"
+
+    publishedGroupId = 'ru.appvelox.permissionist'
+    libraryName = 'permissionist'
+    artifact = 'permissionist'
+
+    libraryDescription = 'Android permissions library'
+
+    siteUrl = 'https://github.com/AppVelox/permissionist'
+    gitUrl = 'https://github.com/AppVelox/permissionist.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'MishkaBolgov'
+    developerName = 'Mikhail Bolgov'
+    developerEmail = 'bologv@appvelox.ru'
+
+    licenseName = 'MIT'
+    licenseUrl = '../LICENSE.txt'
+    allLicenses = ["MIT"]
+}
+
+
 android {
     println "Some action 1"
     compileSdkVersion 28
@@ -44,7 +75,22 @@ println "point 2"
 
 println "check ${project.rootProject.file('local.properties').exists()}"
 
+println "LOG.DEBUG before bintray upload"
+
+
+repositories {
+    mavenCentral()
+}
+
+if (project.rootProject.file('local.properties').exists()) {
+    println "LOG.DEBUG inside bintray upload"
+    apply from: '../install.gradle'
+//    apply from: '../bintray.gradle'
+}
+
 println "point 3"
+
+
 
 //task mytask << {
 //    println "this mytask"
