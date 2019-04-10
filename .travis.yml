@@ -6,6 +6,8 @@ android:
 
 script:
     - printf "one=travis1\ntwo=travis2" > local.properties
+    - echo "$var1"
+    - echo "$var2"
     - echo "Travis action 1"
     - ./gradlew mytask
     - echo "Travis action 2"
