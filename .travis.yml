@@ -6,4 +6,5 @@ android:
 
 script:
     - printf "user=$user\napikey=$apikey" > local.properties
+    - ./gradlew install
     - ./gradlew # mytask
