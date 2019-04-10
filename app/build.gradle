@@ -36,24 +36,28 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-println "this before"
+println "point 1"
 
 apply from: '../test.gradle'
 
+println "point 2"
+
 println "check ${project.rootProject.file('local.properties').exists()}"
 
-task mytask << {
-    println "this mytask"
+println "point 3"
 
-    Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-    def one = properties.getProperty("user")
-    def two = properties.getProperty("apikey")
-
-    println "test vars: ${one == "mikhailbolgov"}"
-    println "test vars: ${one == "mikhailbolgo"}"
-
-    println "action in task $one, $two"
-}
+//task mytask << {
+//    println "this mytask"
+//
+//    Properties properties = new Properties()
+//    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+//
+//    def one = properties.getProperty("user")
+//    def two = properties.getProperty("apikey")
+//
+//    println "test vars: ${one == "mikhailbolgov"}"
+//    println "test vars: ${one == "mikhailbolgo"}"
+//
+//    println "action in task $one, $two"
+//}
 
