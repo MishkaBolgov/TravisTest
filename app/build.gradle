@@ -85,7 +85,7 @@ repositories {
 if (project.rootProject.file('local.properties').exists()) {
     println "LOG.DEBUG inside bintray upload"
     apply from: '../install.gradle'
-//    apply from: '../bintray.gradle'
+    apply from: '../bintray.gradle'
 }
 
 println "point 3"
