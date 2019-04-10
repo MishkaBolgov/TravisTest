@@ -34,6 +34,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
+println "this before"
+
+apply from: '../test.gradle'
+
 task mytask << {
     Properties properties = new Properties()
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -45,4 +49,7 @@ task mytask << {
     println "test vars: ${one == "mikhailbolgo"}"
 
     println "action in task $one, $two"
+
+    argtask
 }
+
