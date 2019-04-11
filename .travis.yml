@@ -11,6 +11,6 @@ android:
 
 script:
     - printf "user=$user\napikey=$apikey" > local.properties
-    - echo "execute"
+    - echo "not execute"
     - ./gradlew install
     - ./gradlew # mytask
