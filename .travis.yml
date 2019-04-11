@@ -2,7 +2,7 @@ language: android
 
 branches:
   only:
-    - master
+    - dev
 
 android:
   components:
@@ -11,6 +11,6 @@ android:
 
 script:
     - printf "user=$user\napikey=$apikey" > local.properties
-    - echo "not execute"
+    - echo "now execute"
     - ./gradlew install
     - ./gradlew # mytask
